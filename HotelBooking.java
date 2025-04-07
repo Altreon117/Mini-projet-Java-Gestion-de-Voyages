@@ -8,8 +8,8 @@ public class HotelBooking {
 
     public HotelBooking() {
         this.nombreRoom = 0;
-        this.Start = new Date();
-        this.End = new Date();
+        this.Start = new Date(0, 0, 0);
+        this.End = new Date(0, 0, 0);
         this.nombreNuit = 0;
         this.roomType = "";
         this.Smoking = false;
@@ -72,6 +72,7 @@ public class HotelBooking {
         Smoking = smoking;
     }
 
+    @Override
     public String toString() {
         return "Booking " + nombreRoom + " from " + Start + " to " + End + ", Room Type: " + roomType + ", Smoking: " + Smoking;
     }
