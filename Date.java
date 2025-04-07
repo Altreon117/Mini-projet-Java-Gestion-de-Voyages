@@ -1,9 +1,9 @@
-public class date {
+public class Date {
     private int jours;
     private  int  mois;
     private int annee;
 
-    public date(int jours, int mois, int annee) {
+    public Date(int jours, int mois, int annee) {
         this.jours = jours;
         this.mois = mois;
         this.annee = annee;
