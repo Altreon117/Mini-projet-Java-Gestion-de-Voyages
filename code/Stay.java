@@ -3,16 +3,19 @@ import java.util.Arrays;
 public class Stay {
     private Date Start;
     private Date End;
-    protected final PlaneTicket[] transport = new PlaneTicket[0];
-    protected final HotelBooking[] reservedStayHotel = new HotelBooking[0];
+    protected PlaneTicket transport;
+    protected HotelBooking reservedStayHotel;
+    protected String transportRef;
+    protected String chambreHotel;
 
-    public Stay(Date start, Date end) {
+    public Stay(Date start, Date end, String transportRef, String chambreHotel) {
         this.Start = start;
         this.End = end;
+        this.transportRef = transportRef;
+        this.chambreHotel = chambreHotel;
     }
 
     public void setStay(int i) {
-
     }
 
     public Date getStart() {
@@ -30,17 +33,12 @@ public class Stay {
         this.End = end;
     }
 
-    public PlaneTicket[] getTransport() {
-        return transport;
-    }public void addTransport(PlaneTicket pt) {
-        transport[transport.length] = pt;
+    public String getTransport() {
+        return transportRef;
     }
 
-    public HotelBooking[] getReservedStayHotel() {
-        return reservedStayHotel;
-    }
-    public void addReservedStayHotel(HotelBooking hb) {
-        reservedStayHotel[reservedStayHotel.length] = hb;
+    public String getReservedStayHotel() {
+        return chambreHotel;
     }
 
     public void calculatePrice() {}
@@ -50,8 +48,8 @@ public class Stay {
         return "Stay{" +
                 "Start=" + Start +
                 ", End=" + End +
-                ", transport=" + Arrays.toString(transport) +
-                ", reservedStayHotel=" + Arrays.toString(reservedStayHotel) +
+                ", transport=" + transport +
+                ", reservedStayHotel=" + reservedStayHotel +
                 '}';
     }
 }

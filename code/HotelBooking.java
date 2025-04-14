@@ -15,11 +15,11 @@ public class HotelBooking {
         this.Smoking = false;
     }
 
-    public HotelBooking(int _nombreRoom, Date Start, Date End, String _roomType, boolean smoking) {
+    public HotelBooking(int _nombreRoom, Date Start, Date End, int nombreNuit, String _roomType, boolean smoking) {
         this.nombreRoom = _nombreRoom;
         this.Start = Start;
         this.End = End;
-        this.nombreNuit = 0;
+        this.nombreNuit = nombreNuit;
         this.roomType = _roomType;
         this.Smoking = smoking;
     }
