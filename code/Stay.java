@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 
 public class Stay {
     private Date Start;
@@ -8,12 +8,15 @@ public class Stay {
     protected String transportRef;
     protected String chambreHotel;
 
-    public Stay(Date start, Date end, String transportRef, String chambreHotel) {
+    public Stay(Date start, Date end, PlaneTicket transport, HotelBooking hotel, String transportRef, String chambreHotel) {
         this.Start = start;
         this.End = end;
+        this.transport = transport;
+        this.reservedStayHotel = hotel;
         this.transportRef = transportRef;
         this.chambreHotel = chambreHotel;
     }
+    
 
     public void setStay(int i) {
     }
@@ -41,8 +44,12 @@ public class Stay {
         return chambreHotel;
     }
 
-    public void calculatePrice() {}
-    public void calculatePrice(int i) {}
+    public int calculatePrice() {
+        return transport.getPrice()+ reservedStayHotel.getPrice();
+    }
+    public int calculatePrice(int i) {
+        return transport.getPrice()+ reservedStayHotel.getPrice();
+    }
 
     public String toString() {
         return "Stay{" +
@@ -50,6 +57,7 @@ public class Stay {
                 ", End=" + End +
                 ", transport=" + transport +
                 ", reservedStayHotel=" + reservedStayHotel +
+                ", price=" + calculatePrice() +
                 '}';
     }
 }
