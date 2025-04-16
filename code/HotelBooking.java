@@ -5,6 +5,7 @@ public class HotelBooking {
     private int nombreNuit;
     private String roomType;
     private boolean Smoking;
+    private int price;
 
     public HotelBooking() {
         this.nombreRoom = 0;
@@ -15,13 +16,14 @@ public class HotelBooking {
         this.Smoking = false;
     }
 
-    public HotelBooking(int _nombreRoom, Date Start, Date End, int nombreNuit, String _roomType, boolean smoking) {
+    public HotelBooking(int _nombreRoom, Date Start, Date End, int nombreNuit, String _roomType, boolean smoking, int price) {
         this.nombreRoom = _nombreRoom;
         this.Start = Start;
         this.End = End;
         this.nombreNuit = nombreNuit;
         this.roomType = _roomType;
         this.Smoking = smoking;
+        this.price = price;
     }
 
     public int getNombreRoom() {
@@ -70,6 +72,14 @@ public class HotelBooking {
 
     public void setSmoking(boolean smoking) {
         Smoking = smoking;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     @Override
